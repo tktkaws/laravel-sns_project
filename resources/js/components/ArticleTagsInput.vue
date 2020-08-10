@@ -18,10 +18,18 @@ export default {
   components: {
     VueTagsInput
   },
+
+  props: {
+    initialTags: {
+      type: Array,
+      default: []
+    }
+  },
+
   data() {
     return {
       tag: "",
-      tags: [],
+      tags: this.initialTags,
       autocompleteItems: [
         {
           text: "Spain"
@@ -53,6 +61,7 @@ export default {
   }
 };
 </script>
+
 <style lang="css" scoped>
 .vue-tags-input {
   max-width: inherit;
