@@ -10,9 +10,10 @@
         <div class="card mt-3">
           <div class="card-body text-center">
             <h2 class="h3 card-title text-center mt-2">ログイン</h2>
-
+              <a href="{{ route('login.{provider}', ['provider' => 'google']) }}" class="btn btn-block btn-danger">
+                <i class="fab fa-google mr-1"></i>Googleでログイン
+              </a>
             @include('error_card_list')
-
             <div class="card-text">
               <form method="POST" action="{{ route('login') }}">
                 @csrf
@@ -29,11 +30,11 @@
 
                 <input type="hidden" name="remember" id="remember" value="on">
 
-                {{-- ここから追加 --}}
+
                 <div class="text-left">
                   <a href="{{ route('password.request') }}" class="card-text">パスワードを忘れた方</a>
                 </div>
-                {{-- ここまで追加 --}}
+
 
                 <button class="btn btn-block blue-gradient mt-2 mb-2" type="submit">ログイン</button>
 
